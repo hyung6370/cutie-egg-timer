@@ -7,6 +7,16 @@
 
 import UIKit
 import CoreData
+import UserNotifications
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    // 푸시 알림을 수신할 때 호출됩니다.
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // 알림을 받았을 때 처리할 내용을 여기에 구현합니다.
+        print("Received notification: \(response.notification)")
+        completionHandler()
+    }
+}
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+    
+        registerForPushNotifications()
+        
+        UNUserNotificationCenter.current().delegate = self
+        
         return true
     }
 
@@ -77,5 +92,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func registerForPushNotifications() {
+        // 1 - UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.
+        UNUserNotificationCenter.current()
+        // 2 -알림을 표시하기 위한 승인을 요청합니다. 전달된 옵션은 앱에서 사용하려는 알림 유형을 나타냅니다. 여기에서 알림(alert), 소리(sound) 및 배지(badge)를 요청합니다.
+            .requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+                // 3 - 완료 핸들러는 인증이 성공했는지 여부를 나타내는 Bool을 수신합니다. 인증 결과를 표시합니다.
+                print("Permission granted: \(granted)")
+                
+                guard granted else { return }
+                self.getNotificationSettings()
+            }
+    }
+    
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            print("Notification settings: \(settings)")
+
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
+
 }
+
+
 

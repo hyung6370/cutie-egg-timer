@@ -14,6 +14,10 @@
 		BD0EB71C2A70119600428D27 /* EggTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD0EB71A2A70119600428D27 /* EggTimer.xcdatamodeld */; };
 		BD0EB71E2A70119800428D27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0EB71D2A70119800428D27 /* Assets.xcassets */; };
 		BD0EB7212A70119800428D27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD0EB71F2A70119800428D27 /* LaunchScreen.storyboard */; };
+		BD0EB72B2A72235A00428D27 /* C.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD0EB72A2A72235A00428D27 /* C.wav */; };
+		BD0EB72D2A72481800428D27 /* G.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD0EB72C2A72481800428D27 /* G.wav */; };
+		BD0EB72F2A72482000428D27 /* A.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD0EB72E2A72482000428D27 /* A.wav */; };
+		BD0EB7312A72482500428D27 /* B.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD0EB7302A72482500428D27 /* B.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,11 @@
 		BD0EB71D2A70119800428D27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD0EB7202A70119800428D27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD0EB7222A70119800428D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD0EB72A2A72235A00428D27 /* C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = C.wav; path = "../../../iOS-angela-study/Xylophone-iOS13/Xylophone/Sounds/C.wav"; sourceTree = "<group>"; };
+		BD0EB72C2A72481800428D27 /* G.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = G.wav; path = "../../../iOS-angela-study/Xylophone-iOS13/Xylophone/Sounds/G.wav"; sourceTree = "<group>"; };
+		BD0EB72E2A72482000428D27 /* A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = A.wav; path = "../../../iOS-angela-study/Xylophone-iOS13/Xylophone/Sounds/A.wav"; sourceTree = "<group>"; };
+		BD0EB7302A72482500428D27 /* B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = B.wav; path = "../../../iOS-angela-study/Xylophone-iOS13/Xylophone/Sounds/B.wav"; sourceTree = "<group>"; };
+		BD0EB7322A728A2800428D27 /* EggTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EggTimer.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 		BD0EB7102A70119600428D27 /* EggTimer */ = {
 			isa = PBXGroup;
 			children = (
+				BD0EB7322A728A2800428D27 /* EggTimer.entitlements */,
 				BD0EB7112A70119600428D27 /* AppDelegate.swift */,
 				BD0EB7132A70119600428D27 /* SceneDelegate.swift */,
 				BD0EB7152A70119600428D27 /* ViewController.swift */,
@@ -66,6 +76,10 @@
 				BD0EB71F2A70119800428D27 /* LaunchScreen.storyboard */,
 				BD0EB7222A70119800428D27 /* Info.plist */,
 				BD0EB71A2A70119600428D27 /* EggTimer.xcdatamodeld */,
+				BD0EB72A2A72235A00428D27 /* C.wav */,
+				BD0EB72C2A72481800428D27 /* G.wav */,
+				BD0EB72E2A72482000428D27 /* A.wav */,
+				BD0EB7302A72482500428D27 /* B.wav */,
 			);
 			path = EggTimer;
 			sourceTree = "<group>";
@@ -128,9 +142,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD0EB72F2A72482000428D27 /* A.wav in Resources */,
+				BD0EB72D2A72481800428D27 /* G.wav in Resources */,
 				BD0EB7212A70119800428D27 /* LaunchScreen.storyboard in Resources */,
+				BD0EB7312A72482500428D27 /* B.wav in Resources */,
 				BD0EB71E2A70119800428D27 /* Assets.xcassets in Resources */,
 				BD0EB7192A70119600428D27 /* Main.storyboard in Resources */,
+				BD0EB72B2A72235A00428D27 /* C.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EggTimer/EggTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -317,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EggTimer/EggTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
